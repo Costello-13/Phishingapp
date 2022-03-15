@@ -1,11 +1,25 @@
-import Card from "./components/Card";
+import { Route, Switch } from 'react-router-dom';
+import Register from "./pages/Register.js";
+import Homepage from "./pages/Homepage";
+import Analytics from "./pages/Analytics";
+import MainNavigation from "./components/layout/MainNavigation"
 
 function App() {
+  //localhost:3000/register --> path 
   return (
     <div>
-      <h1> Phishing Website</h1>
-      <Card text="Play The Game"/>
-      <Card text="Analytics"/>
+      <MainNavigation />
+      <Switch>
+      <Route path='/' exact> 
+        <Homepage />
+      </Route>
+      <Route path='/Register'>
+        <Register />
+      </Route>
+      <Route path='/Analytics'>
+        <Analytics />
+      </Route>
+      </Switch>
     </div>
   );
 }
