@@ -1,8 +1,8 @@
 import Wrap from "./ui/Wrap";
 import classes from "./RegisterForm.module.css";
 import { useRef } from "react";
-import {db} from "../firebase";
-import { collection, addDoc } from "firebase/firestore"; 
+import { db } from "../firebase";
+import { setDoc, doc, getDoc } from "firebase/firestore";
 
 function RegisterForm() {
   const nameref = useRef();
@@ -14,17 +14,24 @@ function RegisterForm() {
     const enteredName = nameref.current.value;
     const enteredEmail = emailref.current.value;
 
-    // const formData = {
-    //   name: enteredName,
-    //   email: enteredEmail,
-    // };
-
-    const docRef = addDoc(collection(db, "Register"), {
+    const formData = {
       name: enteredName,
-      email: enteredEmail
-    });
-    
+      email: enteredEmail,
+    };
+    getDoc(doc(db, "Register", enteredEmail)).then(docSnap => {
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        console.log("email already exists");
+      } else {
+        setDoc(doc(db, "Register", enteredEmail), formData);
+      }
+    })
 
+    // post data to firebase
+    
+    
+    // get document from firebase
+    
     //console.log("hello");
   }
 
