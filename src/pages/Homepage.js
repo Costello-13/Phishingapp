@@ -1,6 +1,5 @@
 import Card from "../components/Card";
 function Homepage() {
-  //localhost:3000/register --> path
   return (
     <container>
       <div>

@@ -3,6 +3,7 @@ import Register from "./pages/Register.js";
 import Homepage from "./pages/Homepage";
 import Analytics from "./pages/Analytics";
 import MainNavigation from "./components/layout/MainNavigation"
+import Quizpage from './pages/Quizpage.js';
 
 function App() {
   //localhost:3000/register --> path 
@@ -20,6 +21,9 @@ function App() {
         <Analytics />
       </Route>
       </Switch>
+      <Route path='/Quiz'>
+        <Quizpage/>
+      </Route>
     </div>
   );
 }

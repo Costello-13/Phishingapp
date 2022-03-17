@@ -3,6 +3,7 @@ import classes from "./RegisterForm.module.css";
 import { useRef } from "react";
 import { db } from "../firebase";
 import { setDoc, doc, getDoc } from "firebase/firestore";
+import { Link } from 'react-router-dom';
 
 function RegisterForm() {
   const nameref = useRef();
@@ -18,20 +19,19 @@ function RegisterForm() {
       name: enteredName,
       email: enteredEmail,
     };
-    getDoc(doc(db, "Register", enteredEmail)).then(docSnap => {
+    getDoc(doc(db, "Register", enteredEmail)).then((docSnap) => {
       if (docSnap.exists()) {
         console.log("Document data:", docSnap.data());
         console.log("email already exists");
       } else {
         setDoc(doc(db, "Register", enteredEmail), formData);
       }
-    })
+    });
 
     // post data to firebase
-    
-    
+
     // get document from firebase
-    
+
     //console.log("hello");
   }
 
@@ -47,7 +47,9 @@ function RegisterForm() {
           <input type="text" required id="email" ref={emailref} />
         </div>
         <div className={classes.actions}>
-          <button>Submit</button>
+          {/* <Link to="/Quizpage"> */}
+            <button>Submit</button>
+          {/* </Link> */}
         </div>
       </form>
     </Wrap>

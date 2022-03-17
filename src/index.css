@@ -69,3 +69,75 @@ h2 {
   top: 0;
   left: 0;
 }
+
+
+
+
+.quiz {
+  background-color: #ffe600;
+  width: 650px;
+  min-height: auto;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 10px 10px 42px 0px #333333;
+  display: block;
+  margin: auto;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.score_section {
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+}
+
+.question_section {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.question_count {
+  margin-bottom: 20px;
+}
+
+.question_count span {
+  font-size: 28px;
+}
+
+.question_text {
+  margin-bottom: 12px;
+  color: #333333;
+}
+
+.timer_text {
+  background: rgb(230, 153, 12);
+  padding: 15px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: 5px solid rgb(255, 189, 67);
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* ANSWERS/RIGHT SECTION */
+.answer_section {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+
+}
+.button_quiz {
+  font: inherit;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #333333;
+  margin: 0 1rem;
+}
+
