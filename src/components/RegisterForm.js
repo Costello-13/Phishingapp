@@ -4,18 +4,22 @@ import classes from "./RegisterForm.module.css";
 import { useRef } from "react";
 import { db } from "../firebase";
 import { setDoc, doc, getDoc } from "firebase/firestore";
-import { Link } from "react-router-dom";
-import Modal_register from "../components/Modal_register";
+import ModalRegister from "../components/ModalRegister";
+import ModalSuccess from "./ModalSuccess";
 
 var mailprop;
 
 function RegisterForm() {
   const [showModal, setShowModal] = useState(false);
+  const [showSuccess, setSuccess] = useState(false);
   const nameref = useRef();
   const emailref = useRef();
 
   function openHandler() {
     setShowModal(true);
+  }
+  function successHandler(){
+    setSuccess(true);
   }
 
   function submitHandler(event) {
@@ -36,6 +40,7 @@ function RegisterForm() {
         openHandler();
       } else {
         setDoc(doc(db, "Register", enteredEmail), formData);
+        successHandler();
       }
     });
 
@@ -64,7 +69,8 @@ function RegisterForm() {
           {/* </Link> */}
         </div>
       </form>
-      <div>{showModal && <Modal_register />}</div>
+      <div>{showModal && <ModalRegister />}</div>
+      <div>{showSuccess && <ModalSuccess />}</div>
     </Wrap>
   );
 }

@@ -1,25 +1,23 @@
 import { Link } from "react-router-dom";
 
-function Modal_register(props) {
+function ModalSuccess(props) {
   function confirmHandler() {
     props.onConfirm();
   }
 
-  function cancelHandler() {
-    props.onCancel();
-  }
   return (
     <div className="modal">
       <p>
-        It seems you have already participated in this game.
+        Your registration is succesfull. <br /> Please click Next to start the
+        quiz.
       </p>
-      <Link to="/">
+      <Link to="/Quiz">
         <button className="button" onClick={confirmHandler}>
-          Home
+          Next
         </button>
       </Link>
     </div>
   );
 }
 
-export default Modal_register;
+export default ModalSuccess;
