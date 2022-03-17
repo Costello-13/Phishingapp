@@ -1,13 +1,22 @@
 import Wrap from "./ui/Wrap";
+import { useState } from "react";
 import classes from "./RegisterForm.module.css";
 import { useRef } from "react";
 import { db } from "../firebase";
 import { setDoc, doc, getDoc } from "firebase/firestore";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Modal_register from "../components/Modal_register";
+
+var mailprop;
 
 function RegisterForm() {
+  const [showModal, setShowModal] = useState(false);
   const nameref = useRef();
   const emailref = useRef();
+
+  function openHandler() {
+    setShowModal(true);
+  }
 
   function submitHandler(event) {
     event.preventDefault();
@@ -19,10 +28,12 @@ function RegisterForm() {
       name: enteredName,
       email: enteredEmail,
     };
+    mailprop = enteredEmail;
     getDoc(doc(db, "Register", enteredEmail)).then((docSnap) => {
       if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
+        //console.log("Document data:", docSnap.data());
         console.log("email already exists");
+        openHandler();
       } else {
         setDoc(doc(db, "Register", enteredEmail), formData);
       }
@@ -33,6 +44,7 @@ function RegisterForm() {
     // get document from firebase
 
     //console.log("hello");
+    console.log(showModal);
   }
 
   return (
@@ -48,12 +60,13 @@ function RegisterForm() {
         </div>
         <div className={classes.actions}>
           {/* <Link to="/Quizpage"> */}
-            <button>Submit</button>
+          <button>Submit</button>
           {/* </Link> */}
         </div>
       </form>
+      <div>{showModal && <Modal_register />}</div>
     </Wrap>
   );
 }
-
+export { mailprop };
 export default RegisterForm;

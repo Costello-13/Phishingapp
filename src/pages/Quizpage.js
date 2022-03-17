@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./Quizpage.js";
+import { db } from "../firebase";
+import { setDoc, doc } from "firebase/firestore";
+import {mailprop} from "../components/RegisterForm.js";
 
-function Questions() {
+function Quizpage() {
   const questions = [
     {
       quest_title: "What color is Dory?",
@@ -44,7 +47,7 @@ function Questions() {
   ///////////////////////////////////////////////////////////////////////////////
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-
+  const [showScore, setShowScore] = useState(false);
   const AnswerHandler = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
@@ -52,31 +55,49 @@ function Questions() {
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
+    } else {
+      setShowScore(true);
     }
   };
+
+  const formData = {
+    Score: score,
+  };
+  setDoc(doc(db, "PreTest", mailprop), formData);
 
   return (
     <section>
       <h1>Quiz page</h1>
       <div className="quiz">
-        <div className="question_section">
-          <div className="question_count">
-            <span>Question {currentQuestion + 1}</span>/{questions.length}
+        {showScore ? (
+          <div className="score-section">
+            You scored {score} out of {questions.length}
           </div>
-          <div className="question_text">
-            {questions[currentQuestion].quest_title}
-          </div>
-        </div>
-        <div className="answer_section">
-          {questions[currentQuestion].answers.map((answeroption, index) => (
-            <button className="button_quiz" onClick={() => AnswerHandler(answeroption.isCorrect)}>
-              {answeroption.answer_text}
-            </button>
-          ))}
-        </div>
+        ) : (
+          <>
+            <div className="question_section">
+              <div className="question_count">
+                <span>Question {currentQuestion + 1}</span>/{questions.length}
+              </div>
+              <div className="question_text">
+                {questions[currentQuestion].quest_title}
+              </div>
+            </div>
+            <div className="answer_section">
+              {questions[currentQuestion].answers.map((answeroption, index) => (
+                <button
+                  className="button_quiz"
+                  onClick={() => AnswerHandler(answeroption.isCorrect)}
+                >
+                  {answeroption.answer_text}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
 }
 
-export default Questions;
+export default Quizpage;
