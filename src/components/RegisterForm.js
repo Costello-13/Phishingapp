@@ -18,7 +18,7 @@ function RegisterForm() {
   function openHandler() {
     setShowModal(true);
   }
-  function successHandler(){
+  function successHandler() {
     setSuccess(true);
   }
 
@@ -38,6 +38,8 @@ function RegisterForm() {
         //console.log("Document data:", docSnap.data());
         console.log("email already exists");
         openHandler();
+      } else if (!enteredEmail.includes("@")) {
+        alert("Please enter a valid emailadress")
       } else {
         setDoc(doc(db, "Register", enteredEmail), formData);
         successHandler();

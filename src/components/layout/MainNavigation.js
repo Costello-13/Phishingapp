@@ -13,7 +13,7 @@ function MainNavigation(){
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/Analytics">Analytics</Link>
+                    <Link to="/Game">Game</Link>
                 </li>
                 <li>
                     <Link to="/About">About</Link>

@@ -72,6 +72,7 @@ h2 {
 /* ANSWERS/RIGHT SECTION */
 .answer_section {
   width: 100%;
+  font-size: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
