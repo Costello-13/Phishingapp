@@ -1,0 +1,19 @@
+.child {
+    background-color: transparent;
+    position: absolute;
+    width: 7rem; 
+    height: 3rem;
+    top: 5rem;
+    left: 25rem;
+    opacity: 0.2;
+}
+
+.parent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: 80%;
+}
