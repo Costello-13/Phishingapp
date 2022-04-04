@@ -6,9 +6,23 @@ import MainNavigation from "./components/layout/MainNavigation";
 import Quizpage from "./pages/Quizpage.js";
 import CookieConsent from "react-cookie-consent";
 import Gamepage from "./pages/Gamepage";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 
 function App() {
   //localhost:3000/register --> path
+  const [ip, setIP] = useState("");
+  const getData = async () => {
+    const res = await axios.get("https://geolocation-db.com/json/");
+    console.log(res.data);
+    setIP(res.data.IPv4);
+  };
+  useEffect(() => {
+    //passing getData method to the lifecycle method
+    getData();
+  }, []);
+
   return (
     <div>
       <MainNavigation />
@@ -27,8 +41,10 @@ function App() {
         <Quizpage />
       </Route>
       <Route path="/Game">
-        <Gamepage/>
+        <Gamepage />
       </Route>
+      <h2 style={{ color: "white" }}>Your IP Address is</h2>
+      <h2 style={{ color: "white" }}>{ip}</h2>
 
       <CookieConsent
         location="bottom"
@@ -39,7 +55,9 @@ function App() {
         expires={150}
       >
         This website uses cookies to enhance the user experience.{" "}
-        <span style={{ fontSize: "10px" }}>Please click here for more information</span>
+        <span style={{ fontSize: "10px" }}>
+          Please click here for more information
+        </span>
       </CookieConsent>
     </div>
   );
