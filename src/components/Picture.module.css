@@ -1,50 +1,81 @@
-.brandname {
-    background-color: red;
-    position: absolute;
-    width: 9%; 
-    height: 6%;
-    top: 14%;
-    left: 34%;
-    opacity: 0.2;
+.brandname_1 {
+  background-color: transparent;
+  position: absolute;
+  width: 9%;
+  height: 6%;
+  top: 14%;
+  left: 34%;
+  opacity: 0.2;
 }
-.url {
-    background-color: red;
-    position: absolute;
-    width: 32%; 
-    height: 4%;
-    top: 0.5%;
-    left: 17%;
-    opacity: 0.2;
+.url_1 {
+  background-color: transparent;
+  position: absolute;
+  width: 32%;
+  height: 4%;
+  top: 0.5%;
+  left: 17%;
+  opacity: 0.2;
 }
-.logo {
-    background-color: red;
-    position: absolute;
-    width: 7%; 
-    height: 4%;
-    bottom: 0.5%;
-    left: 13%;
-    opacity: 0.2;
+.logo_1 {
+  background-color: transparent;
+  position: absolute;
+  width: 7%;
+  height: 4%;
+  bottom: 0.5%;
+  left: 13%;
+  opacity: 0.2;
 }
-.subtitle {
-    background-color: red;
-    position: absolute;
-    width: 6%; 
-    height: 4%;
-    bottom: 20%;
-    left: 46%;
-    opacity: 0.2;
+.subtitle_1 {
+  background-color: transparent;
+  position: absolute;
+  width: 6%;
+  height: 4%;
+  bottom: 20%;
+  left: 46%;
+  opacity: 0.2;
+}
+/* 
+PICTURE 2
+*/
+.urgency {
+  background-color: transparent;
+  position: absolute;
+  width: 27.5%;
+  height: 7%;
+  top: 41%;
+  left: 11.5%;
+  opacity: 0.2;
 }
 
+.customer {
+  background-color: transparent;
+  position: absolute;
+  width: 10%;
+  height: 3.5%;
+  top: 50%;
+  left: 11.5%;
+  opacity: 0.2;
+}
+
+.personal {
+  background-color: transparent;
+  position: absolute;
+  width: 12.5%;
+  height: 3%;
+  top: 74%;
+  left: 11.5%;
+  opacity: 0.2;
+}
 .parent {
-    position: relative;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .image {
-    width: 80%;
+  width: 80%;
 }
 
 .unclickable {
-    pointer-events: none;
+  pointer-events: none;
 }

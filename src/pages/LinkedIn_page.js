@@ -1,15 +1,15 @@
 //import Card from "../components/Card";
-import Picture from "../components/Picture"
+import LinkedIn from "../components/LinkedIn"
 import pic from "../components/login.png"
-function Gamepage() {
+function LinkedIn_page() {
   return (
     <container>
       <div>
-        <h1> Game Page </h1>
-        <Picture src={pic}/>
+        <br/>
+        <LinkedIn src={pic}/>
       </div>
     </container>
   );
 }
 
-export default Gamepage;
+export default LinkedIn_page;

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import classes from './MainNavigation.module.css';
-import img from "./EY.png"
+import img from "./phishing_logow.png"
 
 function MainNavigation(){
     return <header className={classes.header}>

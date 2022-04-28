@@ -4,18 +4,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #ffe600;
+    background-color: #07B8FF;
     padding: 0 10%;
     border-radius: 15px;
   }
 
 .image{
-    margin: 5%;
+    margin: 3%;
     float: left;
-    width: 110px;
-    height:110px;
-    margin-top: -45%;
-    margin-left: -100%;
+    width: 70px;
+    height: auto;
+    margin-left: -150%;
 }
 
   

@@ -5,7 +5,7 @@
 body {
   font-family: sans-serif;
   margin: 3rem;
-  background-color: #333333;
+  background-color: #EAF6FF;
 }
 
 h1,
@@ -19,20 +19,19 @@ h2 {
   padding: 0.5rem 1.5rem;
   cursor: pointer;
   border-radius: 4px;
-  background-color: #ffe600;
+  background-color: #07B8FF;
   color: #333333;
   border: 1px solid #333333;
   margin: 0 1rem;
 }
 
 .button:hover {
-  background-color: #ffe570;
+  background-color: #B6E0FF;
   border-color: #333333;
 }
 
-
 .card {
-  background-color: #ffffff;
+  background-color: #B4DFFF;
   border-radius: 15px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
@@ -70,9 +69,6 @@ h2 {
   top: 0;
   left: 0;
 }
-
-
-
 
 .quiz {
   background-color: #ffe600;
@@ -113,16 +109,6 @@ h2 {
   color: #333333;
 }
 
-.timer_text {
-  background: rgb(230, 153, 12);
-  padding: 15px;
-  margin-top: 20px;
-  margin-right: 20px;
-  border: 5px solid rgb(255, 189, 67);
-  border-radius: 15px;
-  text-align: center;
-}
-
 /* ANSWERS/RIGHT SECTION */
 .answer_section {
   width: 100%;
@@ -130,7 +116,6 @@ h2 {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-
 }
 .button_quiz {
   font: inherit;
@@ -143,3 +128,33 @@ h2 {
   margin: 0 1rem;
 }
 
+.table {
+  border: 1px solid;
+  border-collapse: collapse;
+  width: 100%;
+  padding: 10px;
+}
+
+th {
+  color: #ffe600;
+}
+
+td {
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+.center{
+  text-align: center;
+  border-right: 1px solid;
+}
+
+.logo_explain{
+  width: 15%;
+}
+
+.content_center{
+  display: flex;
+  justify-content: center;
+}

@@ -5,10 +5,12 @@ import Analytics from "./pages/Analytics";
 import MainNavigation from "./components/layout/MainNavigation";
 import Quizpage from "./pages/Quizpage.js";
 import CookieConsent from "react-cookie-consent";
-import Gamepage from "./pages/Gamepage";
+import LinkedIn_page from "./pages/LinkedIn_page";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import Explanation1 from "./pages/Explanation1.js";
+import PayPal_page from "./pages/PayPal_page";
+import Explanation2 from "./pages/Explanation2";
 
 function App() {
   //localhost:3000/register --> path
@@ -41,10 +43,16 @@ function App() {
         <Quizpage />
       </Route>
       <Route path="/Game">
-        <Gamepage />
+        <LinkedIn_page />
       </Route>
-      <h2 style={{ color: "white" }}>Your IP Address is</h2>
-      <h2 style={{ color: "white" }}>{ip}</h2>
+      <Route path="/Explanation">
+        <Explanation1 />
+      </Route>
+      <Route path="/Game2">
+        <PayPal_page/>
+      </Route>
+      {/* <h2 style={{ color: "white" }}>Your IP Address is</h2>
+      <h2 style={{ color: "white" }}>{ip}</h2> */}
 
       <CookieConsent
         location="bottom"

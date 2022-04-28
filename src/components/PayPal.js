@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import pic from "./login_edit.png";
+import pic from "../components/images/PayPal_mail.png";
 import classes_pic from "./Picture.module.css";
-import WModal from "./WModal";
-import LModal from "./LModal.js";
-//import { db } from "../firebase";
-//import { setDoc, doc, getDoc } from "firebase/firestore";
+import WModal2 from "./modals/WModal2";
+import LModal2 from "./modals/LModal2";
+import { mailprop } from "../components/RegisterForm.js";
+import { db } from "../firebase";
+import { getDoc, doc, updateDoc } from "firebase/firestore";
 
-function Picture() {
-   
-
+function PayPal() {
   /////////////////////////////////////////////////////////////////
   // FIREBASE
   /////////////////////////////////////////////////////////////////
@@ -18,7 +17,6 @@ function Picture() {
   /////////////////////////////////////////////////////////////////
   const [showWModal, setShowWModal] = useState(false);
   const [showLModal, setShowLModal] = useState(false);
-  
 
   let [c_clicks, setCCount] = useState(0);
   let [w_clicks, setWCount] = useState(0);
@@ -36,19 +34,20 @@ function Picture() {
     event.preventDefault();
     //alert("Correct");
     setCCount(c_clicks + 1);
-    //console.log(c_clicks + "correct clicks");
-    
-
-    if (c_clicks === 3) {
+    document.getElementById(event.target.id).style.pointerEvents = "none";
+    document.getElementById(event.target.id).style.backgroundColor = "blue";
+    //console.log(hotspot);
+    if (c_clicks === 2) {
       openWHandler();
     }
+
   };
 
   const WrongClick = (event) => {
     event.preventDefault();
     //alert("Wrong");
     setWCount(w_clicks + 1);
-    console.log(w_clicks + "wrong clicks");
+    //console.log(w_clicks + "wrong clicks");
     if (w_clicks === 9) {
       openLHandler();
     }
@@ -63,25 +62,24 @@ function Picture() {
         onClick={(event) => WrongClick(event)}
       />
       <div
-        className={classes_pic.brandname}
+        id="urgency"
+        className={classes_pic.urgency}
         onClick={(event) => CorrectClick(event)}
       />
       <div
-        className={classes_pic.url}
+        id="customer"
+        className={classes_pic.customer}
         onClick={(event) => CorrectClick(event)}
       />
       <div
-        className={classes_pic.logo}
+        id="logo"
+        className={classes_pic.personal}
         onClick={(event) => CorrectClick(event)}
       />
-      <div
-        className={classes_pic.subtitle}
-        onClick={(event) => CorrectClick(event)}
-      />
-      <div>{showWModal && <WModal />}</div>
-      <div>{showLModal && <LModal />}</div>
+      <div>{showWModal && <WModal2 />}</div>
+      <div>{showLModal && <LModal2 />}</div>
     </div>
   );
 }
 
-export default Picture;
+export default PayPal;

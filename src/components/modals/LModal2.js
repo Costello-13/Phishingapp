@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
-function WModal(props) {
+function lose2(props) {
   function confirmHandler() {
     props.onConfirm();
   }
   return (
     <div className="modal">
-      <p>Congrats! You found them all!</p>
-      <Link to="/">
+      <p>WRONG!</p>
+      <Link to="/Explanation2">
         <button className="button" onClick={confirmHandler}>
           Next
         </button>
@@ -16,4 +16,4 @@ function WModal(props) {
   );
 }
 
-export default WModal;
+export default lose2;
