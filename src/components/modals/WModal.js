@@ -7,7 +7,7 @@ function win1(props) {
   return (
     <div className="modal">
       <p>Congrats! You found them all!</p>
-      <Link to="/Explanation">
+      <Link to={props.text}>
         <button className="button" onClick={confirmHandler}>
           Next
         </button>

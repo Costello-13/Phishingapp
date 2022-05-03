@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
 
-function lose2(props) {
+function ModalPost(props) {
   function confirmHandler() {
     props.onConfirm();
   }
+
   return (
     <div className="modal">
-      <p>WRONG!</p>
-      <Link to="/Explanation2">
+      <p>
+        Your score has been recorded. Please continue to view your results.
+      </p>
+      <Link to="/Results">
         <button className="button" onClick={confirmHandler}>
-          Next
+          Continue
         </button>
       </Link>
     </div>
   );
 }
 
-export default lose2;
+export default ModalPost;

@@ -85,8 +85,8 @@ function LinkedIn() {
         className={classes_pic.subtitle_1}
         onClick={(event) => CorrectClick(event)}
       />
-      <div>{showWModal && <WModal />}</div>
-      <div>{showLModal && <LModal />}</div>
+      <div>{showWModal && <WModal text="/Explanation" />}</div>
+      <div>{showLModal && <LModal text="Explanation" />}</div>
     </div>
   );
 }

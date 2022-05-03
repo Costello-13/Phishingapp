@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: EY-interstate;
   margin: 3rem;
   background-color: #EAF6FF;
 }
@@ -41,7 +41,34 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  font: inherit;
 }
+
+.welcomecard {
+  font: inherit;
+  border-radius: 15px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  width: 60rem;
+  height: 19rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.introcard {
+  font: inherit;
+  border-radius: 15px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  width: 60rem;
+  height: 25rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 
 .actions {
   text-align: right;
@@ -71,7 +98,7 @@ h2 {
 }
 
 .quiz {
-  background-color: #ffe600;
+  background-color: #07B8FF;
   width: 900px;
   min-height: auto;
   border-radius: 15px;

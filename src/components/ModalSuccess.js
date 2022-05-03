@@ -11,7 +11,7 @@ function ModalSuccess(props) {
         Your registration is succesfull. <br /> Please click Next to start the
         quiz.
       </p>
-      <Link to="/Quiz">
+      <Link to="/Pre_Quiz">
         <button className="button" onClick={confirmHandler}>
           Next
         </button>

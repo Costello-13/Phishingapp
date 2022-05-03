@@ -1,9 +1,9 @@
 import { Route, Switch } from "react-router-dom";
 import Register from "./pages/Register.js";
 import Homepage from "./pages/Homepage";
-import Analytics from "./pages/Analytics";
+import Results from "./pages/Results";
 import MainNavigation from "./components/layout/MainNavigation";
-import Quizpage from "./pages/Quizpage.js";
+import Pre_Quiz from "./pages/Pre_Quiz";
 import CookieConsent from "react-cookie-consent";
 import LinkedIn_page from "./pages/LinkedIn_page";
 import { useState, useEffect } from "react";
@@ -11,7 +11,8 @@ import axios from "axios";
 import Explanation1 from "./pages/Explanation1.js";
 import PayPal_page from "./pages/PayPal_page";
 import Explanation2 from "./pages/Explanation2";
-
+import Introduction from "./pages/Introduction";
+import Post_Quiz from "./pages/Post_Quiz";
 function App() {
   //localhost:3000/register --> path
   const [ip, setIP] = useState("");
@@ -35,12 +36,12 @@ function App() {
         <Route path="/Register">
           <Register />
         </Route>
-        <Route path="/Analytics">
-          <Analytics />
+        <Route path="/Results">
+          <Results />
         </Route>
       </Switch>
-      <Route path="/Quiz">
-        <Quizpage />
+      <Route path="/Pre_Quiz">
+        <Pre_Quiz />
       </Route>
       <Route path="/Game">
         <LinkedIn_page />
@@ -48,12 +49,19 @@ function App() {
       <Route path="/Explanation">
         <Explanation1 />
       </Route>
+      <Route path="/Explanation2">
+        <Explanation2 />
+      </Route>
       <Route path="/Game2">
         <PayPal_page/>
       </Route>
-      {/* <h2 style={{ color: "white" }}>Your IP Address is</h2>
-      <h2 style={{ color: "white" }}>{ip}</h2> */}
-
+      <Route path="/Introduction">
+        <Introduction />
+      </Route>
+      <Route path="/Post_Quiz">
+        <Post_Quiz/>
+      </Route>
+   
       <CookieConsent
         location="bottom"
         buttonText="I agree"

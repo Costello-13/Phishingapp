@@ -35,10 +35,10 @@
 .actions button {
   font: inherit;
   cursor: pointer;
-  background-color: #ffe600;
+  background-color: #07B8FF;
   color: #333333;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #ffe600;
+  border: 1px solid #07B8FF;
   border-color: #333333;
   border-radius: 4px;
   font-weight: bold;
@@ -50,6 +50,6 @@
 
 .actions button:hover,
 .actions button:active {
-  background-color: #ffe580;
+  background-color: #07B8FF;
   border-color: #333333;
 }

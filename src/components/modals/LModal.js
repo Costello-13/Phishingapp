@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
-function lose1(props) {
+function LModal(props) {
   function confirmHandler() {
     props.onConfirm();
   }
   return (
     <div className="modal">
       <p>WRONG!</p>
-      <Link to="/Explanation">
+      <Link to={props.text}>
         <button className="button" onClick={confirmHandler}>
           Next
         </button>
@@ -16,4 +16,4 @@ function lose1(props) {
   );
 }
 
-export default lose1;
+export default LModal;

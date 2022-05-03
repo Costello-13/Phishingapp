@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import pic from "../components/images/PayPal_mail.png";
 import classes_pic from "./Picture.module.css";
-import WModal2 from "./modals/WModal2";
-import LModal2 from "./modals/LModal2";
+import WModal from "./modals/WModal";
+import LModal from "./modals/LModal";
 import { mailprop } from "../components/RegisterForm.js";
 import { db } from "../firebase";
 import { getDoc, doc, updateDoc } from "firebase/firestore";
@@ -76,8 +76,8 @@ function PayPal() {
         className={classes_pic.personal}
         onClick={(event) => CorrectClick(event)}
       />
-      <div>{showWModal && <WModal2 />}</div>
-      <div>{showLModal && <LModal2 />}</div>
+      <div>{showWModal && <WModal text="/Explanation2" />}</div>
+      <div>{showLModal && <LModal text="/Explanation2" />}</div>
     </div>
   );
 }
