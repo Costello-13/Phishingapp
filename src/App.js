@@ -62,12 +62,12 @@ function App() {
         <Post_Quiz/>
       </Route>
    
-      <CookieConsent
+      <CookieConsent 
         location="bottom"
         buttonText="I agree"
         cookieName="ConsentCookie"
-        style={{ background: "#333333" }}
-        //buttonStyle={{ color: "#999999", fontSize: "13px" }}
+        style={{ background: "#B6E0FF" }}
+        buttonStyle={{ background: "#07B8FF", fontSize: "13px" }}
         expires={150}
       >
         This website uses cookies to enhance the user experience.{" "}
