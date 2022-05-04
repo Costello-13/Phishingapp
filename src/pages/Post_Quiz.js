@@ -299,5 +299,5 @@ function Post_Quiz() {
     </section>
   );
 }
-
+export {mailprop};
 export default Post_Quiz;
