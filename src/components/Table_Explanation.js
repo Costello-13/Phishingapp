@@ -68,11 +68,11 @@ const rows = [
   createData(
     "https://linkedin-galileo-142fd5.netlify.app/#sales.co.jp",
     "URL",
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    "The official LinkedIn login URL is something like this: --- https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin. --- Indicators like 'galileo' and 'netlify.app' show that this is not the official URL. It is important to always check the URL of a website before entering your personal information."
   ),
-  createData(<img src={logoo} className="logo_explain" />, "Lay-out","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  createData(<img src={logoo} className="logo_explain" />, "Lay-out","In this case the wrong LinkedIn logo is being used. It's designed to look a lot like the original one, so that people won't notice it. Always pay attention to the lay-out of the website: logos, colors, etc. can be a clear indication of a malicious website."
   ),
-  createData("Linkedin", "Spelling mistake", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  createData("Linkedin", "Spelling mistake", "The correct spelling: LinkedIn -- Spelling mistakes are a common indicator of phishing attempts. Always pay attention to capital letters and phrasing. Legitimate websites/e-mails rarely contain spelling mistakes, so always pay attention when you find one."
   ),
 ];
 
