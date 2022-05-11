@@ -3,19 +3,13 @@ import pic from "./login_edit.png";
 import classes_pic from "./Picture.module.css";
 import WModal from "../components/modals/WModal";
 import LModal from "../components/modals/LModal";
-import { mailprop } from "../components/RegisterForm.js";
-import { db } from "../firebase";
-import { setDoc, doc, updateDoc } from "firebase/firestore";
+
 
 
 function LinkedIn() {
-  /////////////////////////////////////////////////////////////////
-  // FIREBASE
-  /////////////////////////////////////////////////////////////////
-  // getDoc(doc(db, "Images", "Image1")).then((docSnap) => {console.log(docSnap)});
-  /////////////////////////////////////////////////////////////////
-  // MODAL HANDLERS
-  /////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////
+  // MODAL FUNCTIONALITY
+  //////////////////////////////////////////////////////
   const [showWModal, setShowWModal] = useState(false);
   const [showLModal, setShowLModal] = useState(false);
 
@@ -35,52 +29,49 @@ function LinkedIn() {
     event.preventDefault();
     //alert("Correct");
     setCCount(c_clicks + 1);
-    document.getElementById(event.target.id).style.pointerEvents = "none";
-    document.getElementById(event.target.id).style.backgroundColor = "blue";
+    document.getElementById(event.target.id).style.pointerEvents = "none"; // after correct click, make sure object is no longer clickable
+    document.getElementById(event.target.id).style.backgroundColor = "blue"; // after correct click, remove transparency of hotspot so people know they have found an indicator
 
-    console.log(event.target.id);
-    if (c_clicks === 3) {
-      openWHandler();
+    // console.log(event.target.id);
+    if (c_clicks === 3) {   // 4 Indicators in this picture (0-3), after 4 correct clicks = all found, game over
+      openWHandler(); // Win_Modal will open
     }
 
-    //console.log(event.target.id);
-    //console.log(c_clicks + "correct clicks");
   };
 
   const WrongClick = (event) => {
     event.preventDefault();
-    //alert("Wrong");
-    setWCount(w_clicks + 1);
-    //console.log(w_clicks + "wrong clicks");
-    if (w_clicks === 9) {
-      openLHandler();
+    setWCount(w_clicks + 1); // Keep track of # wrong clicks
+   
+    if (w_clicks === 9) { // After 10 wrong clicks = game over
+      openLHandler(); // Lose_Modal will open
     }
   };
 
   return (
     <div className={classes_pic.parent}>
-      <img
+      <img // Image (LinkedIn login page)
         className={classes_pic.image}
         src={pic}
         alt="Image1"
         onClick={(event) => WrongClick(event)}
       />
-      <div
+      <div // Hotspot 1
         id="brandname"
         className={classes_pic.brandname_1}
         onClick={(event) => CorrectClick(event)}
       />
-      <div
+      <div // Hotspot 2
         id="url"
         className={classes_pic.url_1}
         onClick={(event) => CorrectClick(event)}
       />
-      <div
+      <div // Hotspot 3
         id="logo"
         className={classes_pic.logo_1}
         onClick={(event) => CorrectClick(event)}
       />
-      <div
+      <div // Hotspot 4
         id="subtitle"
         className={classes_pic.subtitle_1}
         onClick={(event) => CorrectClick(event)}

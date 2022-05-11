@@ -1,6 +1,15 @@
 function About() {
-    return <div>About Page</div>;
-  }
-  
-  export default About;
-  
+  return (
+    <container>
+      <div>
+        <br />
+        <div className="introcard">
+          <h1>About</h1>
+
+        </div>
+      </div>
+    </container>
+  );
+}
+
+export default About;

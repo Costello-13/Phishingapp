@@ -6,7 +6,7 @@ function LModal(props) {
   }
   return (
     <div className="modal">
-      <p>WRONG!</p>
+      <p>Too bad, you didn't find them all!</p>
       <Link to={props.text}>
         <button className="button" onClick={confirmHandler}>
           Next

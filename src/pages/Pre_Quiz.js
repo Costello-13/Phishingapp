@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { db } from "../firebase";
-import { setDoc, doc, getDoc } from "firebase/firestore";
-import { mailprop } from "../components/RegisterForm.js";
+import { setDoc, doc } from "firebase/firestore";
+import { mailprop } from "./Introduction";
 import ModalPre from "../components/ModalPre";
 
 

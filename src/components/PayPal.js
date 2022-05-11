@@ -3,18 +3,12 @@ import pic from "../components/images/PayPal_mail.png";
 import classes_pic from "./Picture.module.css";
 import WModal from "./modals/WModal";
 import LModal from "./modals/LModal";
-import { mailprop } from "../components/RegisterForm.js";
-import { db } from "../firebase";
-import { getDoc, doc, updateDoc } from "firebase/firestore";
+
 
 function PayPal() {
-  /////////////////////////////////////////////////////////////////
-  // FIREBASE
-  /////////////////////////////////////////////////////////////////
-  // getDoc(doc(db, "Images", "Image1")).then((docSnap) => {console.log(docSnap)});
-  /////////////////////////////////////////////////////////////////
-  // MODAL HANDLERS
-  /////////////////////////////////////////////////////////////////
+   ///////////////////////////////////////////////////////
+  // MODAL FUNCTIONALITY
+  //////////////////////////////////////////////////////
   const [showWModal, setShowWModal] = useState(false);
   const [showLModal, setShowLModal] = useState(false);
 
@@ -34,11 +28,11 @@ function PayPal() {
     event.preventDefault();
     //alert("Correct");
     setCCount(c_clicks + 1);
-    document.getElementById(event.target.id).style.pointerEvents = "none";
-    document.getElementById(event.target.id).style.backgroundColor = "blue";
-    //console.log(hotspot);
-    if (c_clicks === 2) {
-      openWHandler();
+    document.getElementById(event.target.id).style.pointerEvents = "none"; // after correct click, make sure object is no longer clickable
+    document.getElementById(event.target.id).style.backgroundColor = "blue"; // after correct click, remove transparency of hotspot so people know they have found an indicator
+
+    if (c_clicks === 2) { // 3 Indicators in this picture (0-2), after 3 correct clicks = all found, game over
+      openWHandler(); // Win_Modal will open
     }
 
   };
@@ -46,10 +40,10 @@ function PayPal() {
   const WrongClick = (event) => {
     event.preventDefault();
     //alert("Wrong");
-    setWCount(w_clicks + 1);
-    //console.log(w_clicks + "wrong clicks");
-    if (w_clicks === 9) {
-      openLHandler();
+    setWCount(w_clicks + 1); // Keep track of # wrong clicks
+
+    if (w_clicks === 9) { // After 10 wrong clicks = game over
+      openLHandler(); // Lose_Modal will open
     }
   };
 
@@ -61,17 +55,17 @@ function PayPal() {
         alt="Image1"
         onClick={(event) => WrongClick(event)}
       />
-      <div
+      <div // Hotspot 1
         id="urgency"
         className={classes_pic.urgency}
         onClick={(event) => CorrectClick(event)}
       />
-      <div
+      <div // Hotspot 2
         id="customer"
         className={classes_pic.customer}
         onClick={(event) => CorrectClick(event)}
       />
-      <div
+      <div // Hotspot 3 
         id="logo"
         className={classes_pic.personal}
         onClick={(event) => CorrectClick(event)}

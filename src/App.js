@@ -13,6 +13,9 @@ import PayPal_page from "./pages/PayPal_page";
 import Explanation2 from "./pages/Explanation2";
 import Introduction from "./pages/Introduction";
 import Post_Quiz from "./pages/Post_Quiz";
+import About from "./pages/About";
+
+
 function App() {
   //localhost:3000/register --> path
   const [ip, setIP] = useState("");
@@ -60,6 +63,9 @@ function App() {
       </Route>
       <Route path="/Post_Quiz">
         <Post_Quiz/>
+      </Route>
+      <Route path="/About">
+        <About/>
       </Route>
    
       <CookieConsent 
