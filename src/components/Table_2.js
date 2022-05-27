@@ -20,7 +20,6 @@ import { mailprop } from "./RegisterForm.js";
 import { useState, useEffect } from "react";
 import { getStepConnectorUtilityClass } from "@mui/material";
 
-
 var logo;
 var url;
 var brandname;
@@ -42,7 +41,6 @@ getDoc(doc(db, "Gamescores", "Game_2")).then((docSnap) => {
 });
 
 function createData(indicator, category, explanation) {
-
   return {
     indicator,
     category,
@@ -91,11 +89,17 @@ const rows = [
   createData(
     "Response required",
     "Sense of urgency",
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    "Attackers frequently make the e-mail seem urgent or important to scare users into revealing their personal data. An urgent and seemingly important e-mail attracts more attention and is thus often used by attackers. Always watch out if an e-mail asks you to do something as soon as possible."
   ),
-  createData("Dear Customer", "Impersonal","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  createData(
+    "Dear Customer",
+    "Impersonal",
+    "A common indicator of a phishing e-mail is the impersonal approach to the victim. Frequently, the attacker doesn't have a lot of personal information about the victim and thus uses a general approach such as: customer, user, etc. NOTE: As of late, phishing e-mails are getting more specific and personal, so a personal approach doesn't automatically equal a legitimate e-mail."
   ),
-  createData("Please login to  ...", "Asking for personal information", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  createData(
+    "Please login to  ...",
+    "Asking for personal information",
+    "Attackers will often trick users into revealing their personal information by asking them to log in to their accounts. If you are ever asked to log in to your account, always visit the website directly from your browser. Never click the log in button directly in the e-mail. It's less convenient, but much safer!"
   ),
 ];
 
